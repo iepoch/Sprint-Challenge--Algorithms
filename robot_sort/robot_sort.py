@@ -99,25 +99,26 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        while self.light_is_on() == False:
+        while self.light_is_on() == False:  # Because Light is not set to off we have to check if it is off. So we can check if the light is on set to False
+            # If the light is set to False then we need to turn it on so we need to set it as On
             self.set_light_on()
-            if self.can_move_right() == False:
-                while self.can_move_left() == True:
-                    self.move_left()
-            while self.can_move_right() == True:
-                if self.compare_item() == None:
-                    self.swap_item()
-                    self.move_right()
-                    if self.compare_item() == 1:
-                        self.swap_item()
-                        self.move_left()
-                        self.swap_item()
-                        self.move_right()
-                        self.set_light_off()
-                    elif self.compare_item() >= -1:
-                        self.move_left()
-                        self.swap_item()
-                        self.move_right()
+            if self.can_move_right() == False:  # So if we can't move right lets move left
+                while self.can_move_left() == True:  # So while we can move left
+                    self.move_left()  # Lets keep moving left through our stack
+            while self.can_move_right() == True:  # However, since we are able to move right
+                if self.compare_item() == None:  # If we have not picked up anything (None)
+                    self.swap_item()  # Let us then pick up the item
+                    self.move_right()  # Now let us move to right again
+                    if self.compare_item() == 1:  # Since we now have an item lets compare that item to one in front of us
+                        self.swap_item()  # If this item is greater then the one in the list swap the item
+                        self.move_left()  # lets move back to the left check this item is greater
+                        self.swap_item()  # lets do another swap of the item if its greater
+                        self.move_right()  # lets move to the right check this item
+                        self.set_light_off()  # Lets turn off the light after where done
+                    elif self.compare_item() >= -1:  # However, if the item less than our list
+                        self.move_left()  # lets move left and check this item
+                        self.swap_item()  # If the item is less than our list item then lets swap them
+                        self.move_right()  # One swapped lets move to the right
 
 
 if __name__ == "__main__":
