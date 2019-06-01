@@ -114,7 +114,7 @@ class SortingRobot:
                         self.swap_item()
                         self.move_right()
                         self.set_light_off()
-                    elif self.compare_item() == -1 or self.compare_item() == 0:
+                    elif self.compare_item() >= -1:
                         self.move_left()
                         self.swap_item()
                         self.move_right()
