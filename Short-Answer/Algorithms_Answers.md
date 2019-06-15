@@ -42,13 +42,37 @@ c)  def bunnyEars(bunnies): O(n)
 ## Exercise II
 
 ```
-    My first intial thought would have been longer. With Linear Search
+    My first initial was With Linear Search
 
             for i in range(floor):
                 if floor < floor_egg_broke:
-                    return 1 # or we could return True If the egg didnt break
+                    return 1 # or we could return True If the egg didn't break
                 else:
                 return -1  # and we could return False or if the egg did break
 
 With Linear Search you can get a run time at worst O(n)
+
+
+However if wanted to be better with this we can get of runtime of 0(log n) using Binary Search like so
+            floors = [ 0,1,2,3,4,5,6]
+
+            def boken_eggs(floors, target):
+
+                we need to get the length to know how may floors there are
+                  So we need to get the base case which is ground 0
+                    if len(floors) == 0:
+                        return -1  # empty array
+
+                    low = 0  We know that we will always start at ground 0
+                    upper = len(floors) - 1 We know we will travel down
+
+                    so now while len(floors) is equal or greater than 1
+                    we will find our midpoint
+                        mid = (upper - low) // 2
+
+                        And if our floors[mid] is equal to our target:
+                            then we know we are in the middle and the egg will not break
+                        But if our floors[mid] is greater then the upper floor then eggs will break
+                        Otherwise  anything lower will not break any eggs
+
 ```
