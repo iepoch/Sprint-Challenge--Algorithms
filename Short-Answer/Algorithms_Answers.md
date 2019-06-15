@@ -75,4 +75,6 @@ However if wanted to be better with this we can get of runtime of 0(log n) using
                         But if our floors[mid] is greater than the upper floor then any egg will break
                         Otherwise  anything lower will not break any eggs
 
+                        We can now return the target of floors that will break the eggs.
+
 ```
