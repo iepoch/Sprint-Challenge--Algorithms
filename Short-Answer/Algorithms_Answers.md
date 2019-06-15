@@ -72,7 +72,7 @@ However if wanted to be better with this we can get of runtime of 0(log n) using
 
                         And if our floors[mid] is equal to our target:
                             then we know we are in the middle and the egg will not break
-                        But if our floors[mid] is greater then the upper floor then eggs will break
+                        But if our floors[mid] is greater than the upper floor then any egg will break
                         Otherwise  anything lower will not break any eggs
 
 ```
